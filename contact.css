@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #080808;
+  --surface: #141414;
+  --text: #f2f2f2;
+  --muted: #a5a5a5;
+  --accent: #d8d8d8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.8rem 9%;
+  background: rgba(8, 8, 8, 0.82);
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 3rem;
+  color: var(--text);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+nav a {
+  position: relative;
+  font-size: 1.6rem;
+  color: var(--muted);
+  font-weight: 500;
+  padding: 0.6rem 0;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: translateX(-50%);
+  transition: width 0.35s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--text);
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+.contact {
+  flex: 1;
+  min-height: 100vh;
+  padding: 13rem 9% 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-content {
+  width: 100%;
+  max-width: 85rem;
+  animation: fadeUp 0.8s ease both;
+}
+
+.contact-heading {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.contact-heading > span {
+  font-size: 1.3rem;
+  letter-spacing: 0.4rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.contact-heading h1 {
+  font-size: clamp(3.5rem, 5vw, 5.5rem);
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.contact-heading h1 span {
+  color: var(--muted);
+}
+
+.contact-heading p {
+  color: var(--muted);
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.5rem 2.5rem;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-group.full {
+  grid-column: span 2;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #555;
+  border-radius: 0;
+  transition: border-color 0.3s ease;
+}
+
+.input-group textarea {
+  height: 13rem;
+  resize: vertical;
+  min-height: 10rem;
+}
+
+.input-group label {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  color: var(--muted);
+  font-size: 1.5rem;
+  pointer-events: none;
+  transition:
+    top 0.3s ease,
+    font-size 0.3s ease,
+    color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: var(--text);
+}
+
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:not(:placeholder-shown) ~ label {
+  top: -1.2rem;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.input-group input:focus ~ label,
+.input-group textarea:focus ~ label {
+  color: #fff;
+}
+
+.submit-btn {
+  grid-column: span 2;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 1.3rem 3.5rem;
+  margin-top: 1rem;
+
+  background: transparent;
+  border: 1px solid #888;
+  border-radius: 4rem;
+
+  color: var(--text);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn span {
+  transition: transform 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+  transform: translateY(-0.3rem);
+}
+
+.submit-btn:hover span {
+  transform: translate(0.3rem, -0.3rem);
+}
+
+.submit-btn:active {
+  transform: scale(0.97);
+}
+
+.site-footer {
+  width: 100%;
+  padding: 2rem 5%;
+  border-top: 1px solid #292929;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.site-footer p {
+  font-size: 1.2rem;
+  color: #888;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 995px) {
+  header {
+    padding-inline: 5%;
+  }
+
+  nav {
+    gap: 2rem;
+  }
+
+  .contact {
+    padding-inline: 5%;
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    position: absolute;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.2rem 2rem;
+  }
+
+  nav a {
+    font-size: 1.4rem;
+  }
+
+  .contact {
+    padding: 17rem 7% 5rem;
+  }
+
+  .contact-heading {
+    margin-bottom: 4rem;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .input-group.full {
+    grid-column: span 1;
+  }
+
+  .submit-btn {
+    grid-column: span 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

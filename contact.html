@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="contact.css" />
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="site-animations.css" />
+  </head>
+  <body data-page="contact">
+    <header>
+      <a href="index.html" class="logo">
+        <img src="bocchi.gif" alt="" />
+        ElNaufan
+      </a>
+
+      <nav>
+        <a href="index.html">About Me</a>
+        <a href="materi.html">Materi</a>
+        <a href="tugas.html">Tugas</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </header>
+
+    <main class="contact">
+      <div class="contact-content">
+        <div class="contact-heading">
+          <span>GET IN TOUCH</span>
+          <h1>Contact <span>Me</span></h1>
+          <p>Have any question? Just send me mail real quick!</p>
+        </div>
+
+        <form class="contact-form">
+          <div class="input-group">
+            <input type="text" id="name" placeholder=" " required />
+            <label for="name">Your Name</label>
+          </div>
+
+          <div class="input-group">
+            <input type="email" id="email" placeholder=" " required />
+            <label for="email">Your Email</label>
+          </div>
+
+          <div class="input-group full">
+            <input type="text" id="subject" placeholder=" " required />
+            <label for="subject">Subject</label>
+          </div>
+
+          <div class="input-group full textarea-group">
+            <textarea id="message" placeholder=" " required></textarea>
+            <label for="message">Your Message</label>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <p>© 2026 Tetra Hoshi. All rights reserved.</p>
+    </footer>
+    <script src="anim.js" defer></script>
+  </body>
+</html>

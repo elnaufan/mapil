@@ -1,0 +1,112 @@
+:root {
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-duration: 700ms;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes pageFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.motion-ready .reveal {
+  opacity: 0;
+  animation: pageFadeUp var(--motion-duration) var(--motion-ease) forwards;
+  animation-delay: var(--delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.motion-ready .reveal-soft {
+  opacity: 0;
+  animation: pageFadeIn 650ms ease forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+nav a {
+  position: relative;
+  white-space: nowrap;
+  transition: color 300ms ease;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 99px;
+  background: var(--accent, #d8d8d8);
+  transform: translateX(-50%);
+  transition: width 420ms var(--motion-ease);
+}
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+.btn,
+.btn a,
+.submit-btn,
+.social-icons a {
+  transition:
+    color 300ms ease,
+    background-color 300ms ease,
+    border-color 300ms ease,
+    transform 300ms var(--motion-ease),
+    box-shadow 300ms ease;
+}
+.btn:hover,
+.btn a:hover,
+.submit-btn:hover,
+.social-icons a:hover {
+  transform: translateY(-3px);
+}
+.btn:active,
+.btn a:active,
+.submit-btn:active,
+.social-icons a:active {
+  transform: scale(0.97);
+}
+
+.materi-isi .btn a:hover,
+.tugas-isi .btn a:hover,
+.about-content .btn:hover,
+.submit-btn:hover {
+  box-shadow: 0 8px 28px rgba(255, 255, 255, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .motion-ready .reveal,
+  .motion-ready .reveal-soft {
+    opacity: 1;
+    animation: none;
+  }
+}
