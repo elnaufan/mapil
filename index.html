@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,43 +7,51 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
+    <link rel="stylesheet" href="about.css" />
     <link rel="stylesheet" href="style.css" />
-    <title>A Web About ElNaufan</title>
     <link rel="stylesheet" href="site-animations.css" />
+    <title>Home | ElNaufan</title>
   </head>
-  <body data-page="index">
+  <body data-page="home">
     <header>
-      <a href="home.html" class="logo"> <img src="bocchi.gif" alt="" />ElNaufan</a>
-      <nav>
-        <a href="home.html">Home</a>
-        <a href="index.html" class="active" aria-current="page">About Me</a>
+      <a href="index.html" class="logo"><img src="bocchi.gif" alt="" />ElNaufan</a>
+      <nav aria-label="Navigasi utama">
+        <a href="index.html" class="active" aria-current="page">Home</a>
+        <a href="about.html">About Me</a>
         <a href="materi.html">Materi</a>
         <a href="tugas.html">Tugas</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
-    <section class="about">
-      <div class="img">
-        <img src="main.jpg" alt="" />
-      </div>
-      <div class="about-content">
-        <h1>Hi, It's me <span>Thomas</span></h1>
-        <h3>I'm a <span>Linux & Systems Enthusiast</span></h3>
-        <p>
-          I’m passionate about Operating System, like linux and i use arch btw. I'm also enjoy
-          exploring technology, system configuration, experimenting with different systems, and
-          learning how things work behind the scenes.
-        </p>
-        <div class="social-icons">
-          <a href="https://github.com/elnaufan"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.instagram.com/t.thomas_n/"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.facebook.com/kangsantuy.414761/about"
-            ><i class="fa-brands fa-facebook"></i
-          ></a>
+
+    <main class="home-page">
+      <section class="home-content" aria-labelledby="home-title">
+        <div class="home-intro">
+          <p class="eyebrow">Welcome to</p>
+          <h1 id="home-title">Homepage</h1>
+          <p class="home-description">Silahkan pilih menu</p>
         </div>
-        <a href="https://www.instagram.com/t.thomas_n/" class="btn">Contact</a>
-      </div>
-    </section>
+
+        <div class="page-grid" aria-label="Daftar halaman">
+          <a class="page-card" href="about.html">
+            <span class="page-card-title">About Me</span>
+          </a>
+
+          <a class="page-card" href="materi.html">
+            <span class="page-card-title">Materi</span>
+          </a>
+
+          <a class="page-card" href="tugas.html">
+            <span class="page-card-title">Tugas</span>
+          </a>
+
+          <a class="page-card" href="contact.html">
+            <span class="page-card-title">Contact</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
     <footer class="site-footer">
       <p>© 2026 Tetra Hoshi. All rights reserved.</p>
     </footer>
