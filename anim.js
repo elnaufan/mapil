@@ -3,6 +3,8 @@
   const body = document.body;
 
   const revealGroups = [
+    ['.home-intro', 120],
+    ['.page-grid', 240],
     ['.about .img', 100],
     ['.about-content h1', 180],
     ['.about-content h3', 260],
@@ -28,7 +30,9 @@
     });
 
     document
-      .querySelectorAll('.materi-isi .btn a, .contact-form .input-group, .contact-form .submit-btn')
+      .querySelectorAll(
+        '.materi-isi .btn a, .tugas-isi .btn a, .contact-form .input-group, .contact-form .submit-btn, .page-card',
+      )
       .forEach((element, index) => {
         element.classList.add('reveal');
         element.style.setProperty('--delay', `${360 + index * 75}ms`);

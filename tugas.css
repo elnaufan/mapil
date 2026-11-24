@@ -184,7 +184,7 @@ section {
   section {
     padding-inline: 5%;
   }
-  .tugas {
+  .materi {
     gap: 4rem;
   }
 }
@@ -200,17 +200,17 @@ section {
     flex-wrap: wrap;
     gap: 1.2rem 2rem;
   }
-  .tugas {
+  .materi {
     flex-direction: column;
     text-align: center;
     gap: 3rem;
     padding-top: 15rem;
   }
-  .tugas-isi {
+  .materi-isi {
     width: 100%;
     max-width: 100%;
   }
-  .tugas-isi h1 {
+  .materi-isi h1 {
     text-align: center;
   }
   .btn {
