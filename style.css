@@ -5,8 +5,7 @@
   justify-content: center;
   align-items: center;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.06), transparent 52%),
-    var(--bg);
+    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.06), transparent 52%), var(--bg);
 }
 
 .home-content {
@@ -64,8 +63,8 @@
   align-items: center;
   color: var(--text);
   background: rgba(20, 20, 20, 0.78);
-  border: 1px solid #303030;
-  border-radius: 1.6rem;
+  border: 1px solid #aaa;
+  border-radius: 4rem;
   text-align: center;
   transition:
     background-color 300ms ease,
@@ -76,10 +75,16 @@
 
 .page-card:hover,
 .page-card:focus-visible {
-  background: #1b1b1b;
-  border-color: #888;
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.28);
   transform: translateY(-0.3rem);
+}
+
+.page-card:hover .page-card-title,
+.page-card:focus-visible .page-card-title {
+  color: var(--bg);
 }
 
 .page-card:focus-visible {
